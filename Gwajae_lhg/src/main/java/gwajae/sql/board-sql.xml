@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>member-sql</comment>
+	
+	<entry key="selectAll">
+		SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT, MEMBER_ID
+		FROM BOARD
+		WHERE BOARD_DEL_FL = 'N'
+	</entry>
+	
+	<entry key="selectOne">
+		SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT, MEMBER_ID
+		FROM BOARD
+		WHERE MEMBER_ID = ?
+		AND BOARD_NO = ?
+		AND BOARD_DEL_FL = 'N'
+	</entry>
+	
+	
+	
+	<entry key="update">
+		UPDATE BOARD SET
+		BOARD_TITLE = ?,
+		BOARD_CONTENT = ?
+		WHERE BOARD_NO = ?
+		AND MEMBER_ID = ?
+	</entry>
+	
+	<entry key="selectMine">
+		SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT, MEMBER_ID
+		FROM BOARD
+		WHERE MEMBER_ID = ?
+		AND BOARD_DEL_FL = 'N'
+	</entry>
+	
+	
+	<entry key="delete">
+		UPDATE BOARD SET
+		BOARD_DEL_FL = 'Y'
+		WHERE BOARD_NO = ?
+	</entry>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</properties>
